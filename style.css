@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+:root{
+    --font: 'Jost', sans-serif;
+}
+    
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: var(--font);
+}
+
+.img-all{
+    height: 70px;
+    width: 70px;
+}
+
+#cabecalho{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+}
+
+#navegacao{
+    display: flex;
+    gap: 32px;
+}
+
+.conteudo-menu{
+    text-decoration: none;
+    color: #0099DD
+}
+
+.conteudo-menu:hover{
+    color: antiquewhite;
+    transition: 0.3s;
+}
+
+#conteudo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form{
+    width: 310px;
+    height: 900px;
+    background-color: antiquewhite;
+    margin: 10px;
+    padding: 20px;
+}
+
+footer, .titulo {
+    text-align: center;
+}
+
+.quadro {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.opcoes {
+    text-align: center;
+    margin: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.button {
+    margin: 10px;
+}
+
+.descricao {
+    border-radius: 10px;
+    padding: 10px;
+    text-align: justify;
+    width: 300px;
+    height: 300px;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    margin: 20px;
+  }
+
+  
