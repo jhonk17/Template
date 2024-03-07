@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header id="cabecalho">
         <a href="#"><img class="img-all" src="Imagens/pngwing.com.png" alt="image-allianz"></a>
@@ -18,126 +20,131 @@
         </nav>
     </header>
 
-        <section id="conteudo">
+    <section id="conteudo">
 
-            <div class="form">
-                <form action="">
+        <div class="form">
+            <form action="">
+                <fieldset class="quadro">
+                    <legend><b>Fórmulário de Clientes</b></legend>
+                    <br>
+                    <input type="text" name="login" id="login" class="inputUser" required>
+                    <label for="login" class="labelInput">Login</label>
+                    <br><br>
+                    <input type="text" name="nome" id="nome" class="inputUser">
+                    <label for="nome" class="labelInput">Nome</label>
+                    <br><br>
+                    <input type="text" name="cpfCnpj" id="cpfCnpj" class="inputUser">
+                    <label for="cpfCnpj" class="labelInput">CPF/CNPJ</label>
+                    <br><br>
+                    <input type="text" name="telefone" id="telefone" class="inputUser">
+                    <label for="telefone" class="labelInput">Telefone</label>
+                    <br><br>
+                    <input type="text" name="hostnameIp" id="hostnameIp" class="inputUser">
+                    <label for="hostnameIp" class="labelInput">Hostname/IP:</label>
+                    <br><br>
+                    <input type="text" name="FilialMediador" id="FilialMediador" class="inputUser" required>
+                    <label for="FilialMediador" class="labelInput">Filial/Mediador</label>
+                    <br><br>
+                    <input type="text" name="apolice" id="apolice" class="inputUser" required>
+                    <label for="apolice" class="labelInput">Apólice/cotação</label>
+                    <br><br>
                     <fieldset class="quadro">
-                        <legend><b>Fórmulário de Clientes</b></legend>
+                        <legend><b>Tipo de seguro</b></legend>
+                        <input type="radio" id="novo" name="tipo" value="novo" required>
+                        <label for="novo">Novo</label>
                         <br>
-                            <input type="text" name="login" id="login" class="inputUser" required>
-                            <label for="login" class="labelInput">Login</label>
-                        <br><br>
-                            <input type="text" name="nome" id="nome" class="inputUser">
-                            <label for="nome" class="labelInput">Nome</label>
-                        <br><br>
-                            <input type="text" name="cpfCnpj" id="cpfCnpj" class="inputUser">
-                            <label for="cpfCnpj" class="labelInput">CPF/CNPJ</label>
-                        <br><br>
-                            <input type="text" name="telefone" id="telefone" class="inputUser">
-                            <label for="telefone" class="labelInput">Telefone</label>
-                        <br><br>
-                            <input type="text" name="hostnameIp" id="hostnameIp" class="inputUser">
-                            <label for="hostnameIp" class="labelInput">Hostname/IP:</label>
-                        <br><br>
-                            <input type="text" name="FilialMediador" id="FilialMediador" class="inputUser" required>
-                            <label for="FilialMediador" class="labelInput">Filial/Mediador</label>
-                        <br><br>
-                            <input type="text" name="apolice" id="apolice" class="inputUser" required>
-                            <label for="apolice" class="labelInput">Apólice/cotação</label>
+                        <input type="radio" id="endosso" name="tipo" value="endosso" required>
+                        <label for="endosso">Endosso</label>
+                        <br>
+                        <input type="radio" id="renovação" name="tipo" value="renovação" required>
+                        <label for="renovação">Renovação</label>
                         <br><br>
                         <fieldset class="quadro">
-                            <legend><b>Tipo de seguro</b></legend>
-                                <input type="radio" id="novo" name="modelo" value="novo" required>
-                                <label for="novo">Novo</label>
+                            <legend><b>Seguro</b></legend>
+                            <input type="radio" id="allianz" name="modelo" value="Allianz" required>
+                            <label for="allianz">Allianz</label>
                             <br>
-                                <input type="radio" id="endosso" name="modelo" value="endosso" required>
-                                <label for="endosso">Endosso</label>
-                            <br>
-                                <input type="radio" id="renovação" name="modelo" value="renovação" required>
-                                <label for="renovação">Renovação</label>
-                            <br><br>
-                                <fieldset class="quadro">
-                                    <legend><b>Seguro</b></legend>
-                                    <input type="radio" id="allianz" name="modelo" value="Allianz" required>
-                                    <label for="allianz">Allianz</label>
-                                <br>
-                                <input type="radio" id="congenere" name="modelo" value="Congenere" required>
-                                <label for="congenere">Congênere</label>
+                            <input type="radio" id="congenere" name="modelo" value="Congenere" required>
+                            <label for="congenere">Congênere</label>
                             <br>
                         </fieldset>
                         <br><br>
                         <fieldset class="quadro">
                             <legend><b>Tipo de cotação</b></legend>
-                                <input type="radio" id="auto" name="cotacao" value="auto" required>
-                                <label for="auto">Auto</label>
+                            <input type="radio" id="auto" name="cotacao" value="auto" required>
+                            <label for="auto">Auto</label>
                             <br>
-                                <input type="radio" id="massificado" name="cotacao" value="massificado" required>
-                                <label for="massificado">Massificado</label>
+                            <input type="radio" id="massificado" name="cotacao" value="massificado" required>
+                            <label for="massificado">Massificado</label>
                             <br>
-                                <input type="radio" id="grandesRiscos" name="cotacao" value="grandes riscos" required>
-                                <label for="grandesRiscos">Grandes Riscos</label>
+                            <input type="radio" id="grandesRiscos" name="cotacao" value="grandes riscos" required>
+                            <label for="grandesRiscos">Grandes Riscos</label>
                             <br>
-                                <input type="radio" id="agronegocios" name="cotacao" value="agronegocios" required>
-                                <label for="agronegocios">Agronegócios</label>
+                            <input type="radio" id="agronegocios" name="cotacao" value="agronegocios" required>
+                            <label for="agronegocios">Agronegócios</label>
                             <br>
-                                <input type="radio" id="benefícios" name="cotacao" value="Benefícios" required>
-                                <label for="benefícios">Benefícios</label>
+                            <input type="radio" id="benefícios" name="cotacao" value="Benefícios" required>
+                            <label for="benefícios">Benefícios</label>
                             <br>
                         </fieldset>
-                        
-                        <input type="submit" name="submit" id="submit">
+
+                        <button type="button" id="botao">Limpar</button>
 
                     </fieldset>
-                </form>
-            </div>
+            </form>
+        </div>
 
-            <div class="form">
-                <div class="opcoes">
-                     <h3>
-                        <select name = "templates" id = "templates">
-                            <option value = "None" id = "x">None</option>
-                            <option value = "ResetSenha" id = "x">Reset Senha</option>
-                        </select>
-                    </h3>
-                    <br>
-                </div>
-
-                <div class = buttons>
-                    <input type="submit" class = "button" value="Save" />
-                    <input type="submit" class = "button" value="Load" />
-                    <input type="submit" class = "button" value="Remove" />
-                </div>
-                
-                <h3 class="titulo">Descrição:</h3>
-                <div class="container">
-                    <textarea class="descricao" name="descricao" id="" cols="30" rows="10" placeholder="Digite a descrição do problema aqui"></textarea>
-                </div>
-                <h3 class="titulo">Troubleshooting:</h3>
-                <div class="container">
-                    <textarea class="troubleshooting" name="troubleshooting" id="" cols="30" rows="10" placeholder="Digite seu troubleshooting aqui"></textarea>
-                </div>
-
-            </div>
-
-            <div class="form">
-                <h3 class="titulo">Saída:</h3>
-                <div class="container">
-                    <textarea class="saida" name="saida" id="" cols="30" rows="10" disabled placeholder="Descrição do chamado"></textarea>
-                </div>
-                <div class="buttons">
-                    <input type="submit" class = "button" value="Copiar" />
-                </div>
+        <div class="form">
+            <div class="opcoes">
+                <h3>
+                    <select name="templates" id="templates">
+                        <option value="None" id="x">None</option>
+                        <option value="ResetSenha" id="x">Reset Senha</option>
+                    </select>
+                </h3>
                 <br>
-                <h3 class="titulo">Histórico:</h3>
-                <div class="container">
-                    <textarea class="historico" name="historico" id="" cols="30" rows="10" disabled placeholder="Histórico"></textarea>
-                </div>
             </div>
 
-        </section>
+            <div class=buttons>
+                <input type="submit" class="button" value="Save" />
+                <input type="submit" class="button" value="Load" />
+                <input type="submit" class="button" value="Remove" />
+            </div>
+
+            <h3 class="titulo">Descrição:</h3>
+            <div class="container">
+                <textarea class="descricao" name="descricao" id="" cols="30" rows="10"
+                    placeholder="Digite a descrição do problema aqui"></textarea>
+            </div>
+            <h3 class="titulo">Troubleshooting:</h3>
+            <div class="container">
+                <textarea class="troubleshooting" name="troubleshooting" id="" cols="30" rows="10"
+                    placeholder="Digite seu troubleshooting aqui"></textarea>
+            </div>
+
+        </div>
+
+        <div class="form">
+            <h3 class="titulo">Saída:</h3>
+            <div class="container">
+                <textarea class="saida" name="saida" id="saida" cols="30" rows="10" disabled
+                    placeholder="Descrição do chamado"></textarea>
+            </div>
+            <div class="buttons">
+                <input type="submit" class="button" value="Copiar" />
+            </div>
+            <br>
+            <h3 class="titulo">Histórico:</h3>
+            <div class="container">
+                <textarea class="historico" name="historico" id="" cols="30" rows="10" disabled
+                    placeholder="Histórico"></textarea>
+            </div>
+        </div>
+
+    </section>
     <footer>
         &copy;Desenvolvimento
     </footer>
 </body>
+
 </html>
