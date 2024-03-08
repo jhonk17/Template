@@ -1,68 +1,102 @@
 
-const botao = document.querySelector('#botao')
-let form = document.querySelector('form')
-let formulario = document.querySelectorAll('input')
-
-formulario.addEventListener('keyup')
 
 
-botao.addEventListener("click", () => {
+botao = document.querySelector('#botao').addEventListener("click", () => {
     limparForumulario();
 })
 
 function limparForumulario() {
-
     const form = document.querySelector('form');
     const inputs = form.querySelectorAll('input');
+    const radial = form.querySelectorAll('input[type="radio"]')
 
     inputs.forEach(input => {
         input.value = "";
     });
+    
+    radial.forEach(input=> {
+        input.value = ""
+    })
 
-    const radios = document.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => {
+    radial.forEach(radio => {
         radio.checked = false;
     })
 }
 
-function imprimirFormulario() {
-    // Obtém o valor do elemento de modelo selecionado
-    var modelo = document.querySelector('input[name="modelo"]:checked')?.value;
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona os elementos do formulário
+    const login = document.getElementById('login');
+    const nome = document.getElementById('nome');
+    const cpfCnpj = document.getElementById('cpfCnpj');
+    const telefone = document.getElementById('telefone');
+    const hostnameIp = document.getElementById('hostnameIp');
+    const filialMediador = document.getElementById('FilialMediador');
+    const apolice = document.getElementById('apolice');
+    const tipoSeguro = document.getElementsByName('tipo');
+    const modeloSeguro = document.getElementsByName('modelo');
+    const tipoCotacao = document.getElementsByName('cotacao');
+    const descricao = document.querySelector('.descricao');
+    const troubleshooting = document.querySelector('.troubleshooting');
+    const saida = document.querySelector('.saida');
 
-    // Limpa o conteúdo do elemento de saída
-    var saida = document.getElementById("output");
-    saida.textContent = "";
+    // Adiciona event listeners para cada campo do formulário
+    login.addEventListener('input', func2);
+    nome.addEventListener('input', func2);
+    cpfCnpj.addEventListener('input', func2);
+    telefone.addEventListener('input', func2);
+    hostnameIp.addEventListener('input', func2);
+    filialMediador.addEventListener('input', func2);
+    apolice.addEventListener('input', func2);
+    tipoSeguro.forEach(radio => radio.addEventListener('change', func2));
+    modeloSeguro.forEach(radio => radio.addEventListener('change', func2));
+    tipoCotacao.forEach(radio => radio.addEventListener('change', func2));
+    descricao.addEventListener('input', func2);
+    troubleshooting.addEventListener('input', func2);
 
-    // Array contendo os nomes dos campos
-    var campos = ["BE", "Nome", "cnpj", "email", "tel", "hora", "hostname", "apolice", "razao", "title"];
+    /**
+     * Atualiza o campo de saída com os dados do formulário.
+     */
+    function func2() {
+        // Limpa o campo de saída
+        saida.value = "";
 
-    // Itera sobre cada campo e chama a função doPrint com o índice e o nome do campo
-    campos.forEach(campo => doPrint(campos.indexOf(campo), campo));
+        // Adiciona os dados do formulário ao campo de saída
+        saida.value += "Login: " + login.value + "\n";
+        saida.value += "Nome: " + nome.value + "\n";
+        saida.value += "CPF/CNPJ: " + cpfCnpj.value + "\n";
+        saida.value += "Telefone: " + telefone.value + "\n";
+        saida.value += "Hostname/IP: " + hostnameIp.value + "\n";
+        saida.value += "Filial/Mediador: " + filialMediador.value + "\n";
+        saida.value += "Apólice/Cotação: " + apolice.value + "\n";
 
-    // Adiciona o valor do modelo ao elemento de saída, se estiver definido
-    if (modelo) {
-        saida.textContent += "Modalidade de trabalho: " + modelo + "\n";
+        // Adiciona o tipo de seguro selecionado ao campo de saída
+        tipoSeguro.forEach(radio => {
+            if (radio.checked) {
+                saida.value += "Tipo de seguro: " + radio.value + "\n";
+            }
+        });
+
+        // Adiciona o modelo de seguro selecionado ao campo de saída
+        modeloSeguro.forEach(radio => {
+            if (radio.checked) {
+                saida.value += "Modelo de seguro: " + radio.value + "\n";
+            }
+        });
+
+        // Adiciona o tipo de cotação selecionado ao campo de saída
+        tipoCotacao.forEach(radio => {
+            if (radio.checked) {
+                saida.value += "Tipo de cotação: " + radio.value + "\n";
+            }
+        });
+
+        // Adiciona a descrição e troubleshooting ao campo de saída
+        saida.value += "Descrição: " + descricao.value + "\n";
+        saida.value += "Troubleshooting: " + troubleshooting.value;
     }
+});
 
-    // Obtém os valores dos campos de mensagem e descrição
-    var trouble = document.getElementById("msg").value;
-    var desc = document.getElementById("desc").value;
 
-    // Adiciona a descrição do chamado ao elemento de saída, se estiver definida e o output estiver vazio
-    if (!saida.textContent) {
-        output.textContent += "Descrição do chamado: \n\n" + desc;
-    }
-    // Adiciona a descrição do chamado ao elemento de saída, se estiver definida
-    else if (desc) {
-        saida.textContent += "\n\nDescrição do chamado: \n\n" + desc;
-    }
 
-    // Adiciona a mensagem de troubleshooting ao elemento de saída, se estiver definida e o output estiver vazio
-    if (!saida.textContent) {
-        saida.textContent += "Troubleshooting: \n\n" + trouble;
-    }
-    // Adiciona a mensagem de troubleshooting ao elemento de saída, se estiver definida
-    else if (trouble) {
-        saida.textContent += "\n\nTroubleshooting: \n\n" + trouble;
-    }
-}
+
+
